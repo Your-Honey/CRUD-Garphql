@@ -10,16 +10,23 @@ const typeDefs = `#graphql
   scalar JSON
   
   type Submission {
-    id: ID
-    submittedAt: DateTime
-    data:JSON
+    id: ID!
+    submittedAt: DateTime!
+    data:JSON!
   }
 
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
-    submissions: [Submission]
+    submissions: [Submission!]!
+    submission(id:ID!):Submission
+  }
+
+  type Mutation{
+    createSubmission(submittedAt:DateTime!,data:JSON!): Submission!
+    deleteSubmission(id:ID!):Boolean!
+    updateSubmission(id:ID!,data:JSON):Submission!
   }
 `;
 
