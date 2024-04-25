@@ -2,10 +2,10 @@
 
 import GraphQLJSON from "graphql-type-json";
 import { GraphQLDateTime } from "graphql-iso-date";
-import db, { getId } from "../modules/db";
+import db, { getId } from "../../modules/db";
 import { GraphQLScalarType } from "graphql";
 
-const resolvers = {
+const submissionResolvers = {
   DateTime: GraphQLDateTime,
   JSON: GraphQLJSON,
   Query: {
@@ -50,4 +50,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+export default submissionResolvers;

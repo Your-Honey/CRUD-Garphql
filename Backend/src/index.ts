@@ -3,8 +3,7 @@ import morgan from "morgan";
 import db from "./modules/db";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import typeDefs from "./graphql/schema";
-import resolvers from "./graphql/resolvers";
+import { typeDefs, resolvers } from "./graphql";
 
 const app = express();
 
